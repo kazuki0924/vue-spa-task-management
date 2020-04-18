@@ -7,7 +7,16 @@
 </template>
 
 <script>
-  export default {}
+  import { mapGetters } from 'vuex'
+
+  export default {
+    computed: {
+      ...mapGetters(['getTask']),
+      task() {
+        return this.getTask(this.$route.params.id)
+      }
+    }
+  }
 </script>
 
 <style>
