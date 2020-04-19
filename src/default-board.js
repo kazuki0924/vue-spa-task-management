@@ -19,7 +19,7 @@ export default {
           userAssigned: null
         },
         {
-          description: '',
+          description: 'The bag is in the room. get some food',
           name: 'and third',
           id: uuid(),
           userAssigned: null
@@ -41,7 +41,7 @@ export default {
       name: 'done',
       tasks: [
         {
-          description: '',
+          description: 'Some description',
           name: 'first task',
           id: uuid(),
           userAssigned: null
