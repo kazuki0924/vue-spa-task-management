@@ -37,42 +37,42 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+import { mapState } from 'vuex'
 
-  export default {
-    computed: {
-      ...mapState(['board']),
-      isTaskOpen() {
-        return this.$route.name === 'task'
-      }
+export default {
+  computed: {
+    ...mapState(['board']),
+    isTaskOpen() {
+      return this.$route.name === 'task'
+    }
+  },
+  methods: {
+    goToTask(task) {
+      this.$router.push({ name: 'task', params: { id: task.id } })
     },
-    methods: {
-      goToTask(task) {
-        this.$router.push({ name: 'task', params: { id: task.id } })
-      },
-      close() {
-        this.$router.push({ name: 'board' })
-      }
+    close() {
+      this.$router.push({ name: 'board' })
     }
   }
+}
 </script>
 
 <style lang="css">
-  .task {
-    @apply flex items-center flex-wrap shadow mb-2 py-2 px-2 rounded bg-white text-grey-darkest no-underline;
-  }
+.task {
+  @apply flex items-center flex-wrap shadow mb-2 py-2 px-2 rounded bg-white text-grey-darkest no-underline;
+}
 
-  .column {
-    @apply bg-grey-light p-2 mr-4 text-left shadow rounded;
-    min-width: 350px;
-  }
+.column {
+  @apply bg-grey-light p-2 mr-4 text-left shadow rounded;
+  min-width: 350px;
+}
 
-  .board {
-    @apply p-4 bg-teal-dark h-full overflow-auto;
-  }
+.board {
+  @apply p-4 bg-teal-dark h-full overflow-auto;
+}
 
-  .task-bg {
-    @apply pin absolute;
-    background: rgba(0, 0, 0, 0.5);
-  }
+.task-bg {
+  @apply pin absolute;
+  background: rgba(0, 0, 0, 0.5);
+}
 </style>
